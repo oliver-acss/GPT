@@ -1,0 +1,2 @@
+torch==2.6.0.dev20241216+cu126
+transformers~=4.48.3
