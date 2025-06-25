@@ -45,15 +45,15 @@ def main():
             output = model(x)
             input_ids = output.argmax(dim=-1)
 
-            for x_ids, y_ids in zip(input_ids, x):
-                eng = id2String(tokenizer, y_ids).strip()
-                chin = id2String(tokenizer, x_ids).strip()
+            for x_ids, y_ids in zip(input_ids, y):
+                eng = id2String(tokenizer, x_ids).strip()
+                chin = id2String(tokenizer, y_ids).strip()
 
                 # Calculate BLEU score
-                bleu_score = calculate_bleu(eng, chin)
+                bleu_score = calculate_bleu(chin, eng)
 
                 # Calculate ROUGE scores
-                rouge_scores = calculate_rouge(eng, chin)
+                rouge_scores = calculate_rouge(chin, eng)
 
                 print(f"Input: {eng}")
                 print(f"Output: {chin}")
