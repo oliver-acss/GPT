@@ -1,2 +1,4 @@
 torch==2.6.0.dev20241216+cu126
 transformers~=4.48.3
+tencentcloud-sdk-python>=3.0.0
+openai>=1.0.0
