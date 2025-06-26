@@ -24,7 +24,7 @@ class GPT(nn.Module):
             for i in range(n):
                 model_list.append(getGPT_Attention(d_model,n_head,d_ff,dropout))
             return model_list
-        self.GPT_block=nn.Sequential(*gpt_attetion_block(1))
+        self.GPT_block=nn.Sequential(*gpt_attetion_block(12))
     def forward(self,x):
         x = self.embedding(x)
         x = self.GPT_block(x)
